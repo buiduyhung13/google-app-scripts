@@ -62,6 +62,10 @@ function handleAddDateTime(sheet, range){
 
     for(let i=0; i<range.getNumRows(); i++){
       var rowIndex = range.getRow() + i;
+      var cell = sheet.getRange(rowIndex, colIndex);
+      if(cell.isBlank()){
+        continue
+      }
       addDateTimeValue(sheet, rowIndex, dateTimeCol)
     }
   }
